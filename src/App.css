@@ -1,38 +1,72 @@
+/* Стили для основного контейнера */
 .App {
+  font-family: Arial, sans-serif;
   text-align: center;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Стили для заголовка */
+.app-title {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Стили для списка товаров */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+  gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+/* Стили для карточки товара */
+.product-card {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.canvas-container {
+  height: 350px; 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center; 
+  align-items: center; 
 }
 
-.App-link {
-  color: #61dafb;
+/* Стили для изображения товара */
+.product-image {
+  width: 80%;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Стили для названия товара */
+.product-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* Стили для описания товара */
+.product-description {
+  margin-bottom: 10px;
+  overflow: hidden; /* Скрытие содержимого, которое не помещается */
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+}
+
+/* Стили для цены товара */
+.product-price {
+  font-weight: bold;
+}
+
+@media screen and (max-width:900px) {
+  .product-image {
+    width: 70%;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media screen and (max-width:640px) {
+  .product-image {
+    width: 60%;
   }
 }
