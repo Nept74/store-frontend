@@ -1,17 +1,21 @@
-/* Стили для основного контейнера */
+body{
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
 .App {
   font-family: Arial, sans-serif;
   text-align: center;
-  padding: 20px;
+}
+.Main {
+  padding: 0 20px 20px;
 }
 
-/* Стили для заголовка */
 .app-title {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Стили для списка товаров */
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
@@ -19,13 +23,10 @@
 }
 
 
-
-/* Стили для карточки товара */
 .product-card {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  max-width: 80%;
 }
 
 .canvas-container {
@@ -35,38 +36,71 @@
   align-items: center; 
 }
 
-/* Стили для изображения товара */
 .product-image {
   width: 80%;
   border-radius: 5px;
 }
 
-/* Стили для названия товара */
 .product-title {
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-/* Стили для описания товара */
-.product-description {
-  margin-bottom: 10px;
-  overflow: hidden; /* Скрытие содержимого, которое не помещается */
-  /* white-space: nowrap; */
-  text-overflow: ellipsis;
-}
 
-/* Стили для цены товара */
 .product-price {
   font-weight: bold;
 }
+footer {
+  display: flex;
+  flex-direction: row;
+  background-color: #333; /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  padding: 10px;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.mail{
+  color: inherit; /* Наследовать цвет текста от родительского элемента */
+  text-decoration: none; /* Убрать подчеркивание */
+}
+.mail:hover{
+  color: blue;
+}
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:925px) {
   .product-image {
     width: 70%;
   }
+  footer{
+    position: relative;
+  }
 }
-@media screen and (max-width:640px) {
+@media screen and (max-width:640px) and (min-width: 500px) {
   .product-image {
-    width: 60%;
+    width: 55%;
+  }
+}
+@media screen and (max-width:330px){
+  .Main{
+    padding: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .product-list {
+    max-width: 1100px;
+    margin: 0 auto; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+  }
+  .product-card {
+    padding: 10px;
+  }
+  .product-image{
+    width: 240px;
   }
 }
